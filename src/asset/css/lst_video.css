@@ -8,7 +8,10 @@
 
 body {
     color: #fff;
-    background: black;
+    background: #232526;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 
@@ -37,7 +40,7 @@ body {
 
 .video {
     margin-top: 5%;
-    width: 50%;
+    width: 60%;
     background: #fff;
 }
 
@@ -63,14 +66,17 @@ video {
 }
 
 .list_video {
-    margin-top: -400px;
+    margin-top: -450px;
+    margin-left: 50%;
     width: 500px;
-    height: 400px;
+    height: 420px;
     float: right;
     overflow-y: scroll;
     background:#fff;
     font-size: 19px;
     text-decoration: none;
+    position: absolute;
+    display: block;
     
 }
 

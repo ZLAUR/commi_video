@@ -56,15 +56,11 @@ if  (isset($_GET['id'])) {
 
     <body>
 
-        <div class="titulo">
-            <h1 class="titulo_video">
-                Estás en la clase de:
-                <?php echo $title?>
-            </h1>
-        </div>
-
         <div class="padre">
             <div class="video">
+            <h2 class="titulo2">
+                    <?php echo $titulo?>
+                </h2>
 
                 <video autoplay controls id="video-cm" class="video-cm video-js vjs-16-9 vjs-big-play-centered vjs-big-play-button">
                     <source src="<?php echo $video?>">                    
@@ -75,10 +71,10 @@ if  (isset($_GET['id'])) {
                     <?= $_SESSION['message_error']?>
                     </div>
                 <?php session_unset();}?>
-
-                <h2 class="titulo2">
-                    <?php echo $titulo?>
-                </h2>
+                <h1 class="titulo2">
+                Estás en la clase de:
+                <?php echo $title?>
+                </h1>
 
                 <h3 class="titulo2">
                     <?php echo $fecha?> 
