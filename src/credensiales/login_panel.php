@@ -1,9 +1,12 @@
 <?php
+session_start();
 include '../php/conn.php';
 
 if (isset($_POST['ingresar_panel_user'])) {
   $correo = $_POST['correo'];
   $contrasena = $_POST['contrasena'];
+  $contrasena1 = $_POST['nombre'];
+  $_SESSION['user_email_session']=$correo;
 
   $sql = "SELECT * FROM login_user WHERE correo='$correo' && contrasena='$contrasena'";
   $consult = mysqli_query ($conn, $sql);
@@ -19,6 +22,7 @@ if (isset($_POST['ingresar_panel_user'])) {
     $_SESSION['error_message_type_login'] = 'danger';
     header("Location:login.php");
   }
+
 }
 
  ?>

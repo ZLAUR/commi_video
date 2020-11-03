@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Rajdhani:wght@300&family=Teko:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Catamaran:wght@400;500&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +8,7 @@
 
 body {
     color: #fff;
-    background: #0F2027;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: black;
 }
 
 
@@ -26,21 +23,22 @@ body {
 
 .titulo {
     width: 100%;
-    background: #fff;
-    color: black;
+    color: #fff;
     margin: 0;
-    font-family: 'Lobster', cursive;
+    font-family: 'Anton', sans-serif;
+
+    margin-top: 2%;
 }
 
 .titulo_video {
-    font-size: 20px;
+    font-size: 40px;
     text-align: center;
 }
 
 .video {
     margin-top: 5%;
     width: 50%;
-    background: #243b55bd;
+    background: #fff;
 }
 
 video {
@@ -53,15 +51,15 @@ video {
     margin: 0;
     padding: 10px;
     display: flex;
-    font-family: 'Dancing Script', cursive;
+    color: #11998e;
 }
 
 .video a {
     text-decoration: none;
-    color: #fff;
+    color: #11998e;
     font-size: 20px;
     padding: 10px;
-    font-family: 'Teko', sans-serif;
+
 }
 
 .list_video {
@@ -70,10 +68,10 @@ video {
     height: 400px;
     float: right;
     overflow-y: scroll;
-    background: #fff;
-    font-family: 'Teko', sans-serif;
-    font-size: 25px;
+    background:#fff;
+    font-size: 19px;
     text-decoration: none;
+    
 }
 
 .list_video::-webkit-scrollbar {
@@ -99,13 +97,31 @@ video {
 }
 
 .titulo_list {
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Anton', sans-serif;
+
     text-align: center;
     width: 100%;
-    background: black;
+    background: #fff;
+    color: #11998e;
 }
 
+.list_video_list{
+    width: 100%;
+    margin-bottom: 10px;
+    list-style: none;
+    padding: 2px;
+
+}
+
+.link{
+    color: #11998e;
+    font-family: 'Catamaran', sans-serif;
+}
 @media (max-width: 960px) {
+    .titulo_video {
+        font-size: 20px;
+        text-align: center;
+    }
     .padre {
         max-width: 90%;
         margin: auto;

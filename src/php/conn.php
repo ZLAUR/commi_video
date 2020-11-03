@@ -1,7 +1,7 @@
 <?php 
 error_reporting(0);
 session_start ();
-$conn = mysqli_connect('localhost', 'root', '', 'commi_video');
+$conn = mysqli_connect('localhost', 'root', '7664', 'commi_video');
 
 if (!$conn) {
     $_SESSION['message_error'] = 'ERROR AL CONECTAR A LA BASE DE DATOS !ERROR!';

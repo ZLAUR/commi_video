@@ -1,4 +1,17 @@
+<?php session_start ();?>
 <?php include '../php/conn.php'?>
+
+
+<?php
+$session = $_SESSION['user_email_session'];
+if ($session == null || $session = '') {
+  header("location:../credensiales/login.php");
+  die();
+}
+
+
+
+?>
 
 <?php
 if  (isset($_GET['id'])) {
@@ -28,7 +41,7 @@ if  (isset($_GET['id'])) {
             <?php echo $row['materia']?>
             <?php echo $row['titulo']?>
         </title>
-        <link rel="shortcut icon" href="https://i.ibb.co/ThNB3Bn/LOGO.png" type="image/x-icon">
+        <link rel="shortcut icon" href="https://i.ibb.co/gPK5xQK/LG1.png" type="image/x-icon">
         <!-- CSS only -->
         <link rel="shortcut icon" href="img/logo_video_h.png" type="image/x-icon">
         <link rel="apple-touch-icon" href="img/logo_video_h.png" type="image/x-icon">
@@ -81,9 +94,9 @@ if  (isset($_GET['id'])) {
             $consult = mysqli_query($conn,$query);
             while ($row = mysqli_fetch_array($consult)) { ?>
 
-            <li>
+            <li class="list_video_list">
 
-                <a href="../asset/list_video.php?id=<?php echo $row['id']?>"><?php echo $row['materia']?>-<?php echo $row['titulo']?></a>
+                <a class="link" href="../asset/list_video.php?id=<?php echo $row['id']?>"><?php echo $row['materia']?>-<?php echo $row['titulo']?></a>
             
             </li>
             <?php }?>
