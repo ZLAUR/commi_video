@@ -58,9 +58,6 @@ if  (isset($_GET['id'])) {
 
         <div class="padre">
             <div class="video">
-            <h2 class="titulo2">
-                    <?php echo $titulo?>
-                </h2>
 
                 <video autoplay controls id="video-cm" class="video-cm video-js vjs-16-9 vjs-big-play-centered vjs-big-play-button">
                     <source src="<?php echo $video?>">                    
@@ -71,32 +68,8 @@ if  (isset($_GET['id'])) {
                     <?= $_SESSION['message_error']?>
                     </div>
                 <?php session_unset();}?>
-                <h1 class="titulo2">
-                Estás en la clase de:
-                <?php echo $title?>
-                </h1>
-
-                <h3 class="titulo2">
-                    <?php echo $fecha?> 
-                </h3>
-
-                <a class="home" href="../home.php">Home</a>
         </div>
 
-        <div class="list_video" id="list_video">
-        <div class="titulo_list">Lista de Reproducción </div>
-            <?php
-            $query = " SELECT * FROM asignatura_1";
-            $consult = mysqli_query($conn,$query);
-            while ($row = mysqli_fetch_array($consult)) { ?>
-
-            <li class="list_video_list">
-
-                <a class="link" href="../asset/list_video.php?id=<?php echo $row['id']?>"><?php echo $row['materia']?>-<?php echo $row['titulo']?></a>
-            
-            </li>
-            <?php }?>
-            </div>
         </div>
         
             <!-- jQuery and JS bundle w/ Popper.js -->
