@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+body {
+    background: #141E30;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.contatiner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+    color: #fff;
+}
+
+.box {
+    width: 20%;
+    height: auto;
+    margin: 20px;
+    box-sizing: border-box;
+    font-size: 50px;
+    border-radius: 5px;
+    background: #8360c3;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2ebf91, #8360c3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.box:hover {
+    background: #fff;
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+.fondo_list {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.asignatura {
+    font-size: 15px;
+    margin: 0;
+    margin-top: -10px;
+    padding: 10px;
+}
+
+.error_de_conexion {
+    width: 10%;
+    display: flex;
+    margin: auto;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+.miniature_video {
+    width: 100%;
+    margin: 0;
+    display: flex;
+}
+
+@media (max-width: 960px) {
+    .box {
+        width: 40%;
+    }
+}
+
+@media (max-width: 720px) {
+    .box {
+        width: 80%;
+    }
+}

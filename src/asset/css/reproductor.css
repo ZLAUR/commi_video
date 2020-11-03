@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+.vjs-has-started .vjs-control-bar {
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+    background: #243b55bd;
+}
+
+.video-js .vjs-control {
+    color: #fff;
+}
+
+.video-js .vjs-big-play-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: none;
+    line-height: 80px;
+}
+
+.video-js .vjs-big-play-button:hover {
+    background-color: black;
+}
+
+.vjs-playback-rate-value {
+    font-family: cursive;
+}
