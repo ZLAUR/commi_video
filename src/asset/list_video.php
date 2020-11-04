@@ -77,7 +77,7 @@ if  (isset($_GET['id'])) {
                 $consult = mysqli_query($conn,$query);
 
                 while ($row = mysqli_fetch_array($consult)) { ?>
-                        <h1 class="lista_titulo"><?php echo $titulo; ?></h1>
+                        <h1 class="lista_titulo"><?php echo $row['titulo']?></h1>
                         <a href="list_video.php?id=<?php echo $row['id']?>">
                           <video
                             class="miniature_video"
