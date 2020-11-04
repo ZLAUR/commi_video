@@ -18,7 +18,7 @@ $titulo='commi video'  ;
 <body>
     <header class="header">
         <div class="ingresar">
-            <a href="src/credensiales/login.php" class="link">Ingresar al sistema</a>
+            <a href="src1/credensiales/login.php" class="link">Ingresar al sistema</a>
         </div>
     </header>
 </body>
