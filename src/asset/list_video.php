@@ -38,7 +38,6 @@ if  (isset($_GET['id'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0 user-scalable=no">
         <meta name="theme-color" content=" #0F2027">
         <title>
-            <?php echo $row['materia']?>
             <?php echo $row['titulo']?>
         </title>
         <link rel="shortcut icon" href="https://i.ibb.co/gPK5xQK/LG1.png" type="image/x-icon">
@@ -48,33 +47,62 @@ if  (isset($_GET['id'])) {
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="https://vjs.zencdn.net/7.8.2/video-js.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="stylesheet" href="css/lst_video.css">
         <link rel="stylesheet" href="css/reproductor.css">
-        
+
     </head>
-
-
     <body>
 
-        <div class="padre">
-            <div class="video">
+      <div class="padre">
+        <div class="video">
 
-                <video autoplay controls id="video-cm" class="video-cm video-js vjs-16-9 vjs-big-play-centered vjs-big-play-button">
-                    <source src="<?php echo $video?>">                    
+           <h1 class="titulo"> <a href="../home.php" class="inici_home">Inicio | </a> <?php echo $titulo; ?></h1>
+
+                <video controls id="video-cm" class="videol video-cm video-js vjs-16-9 vjs-big-play-centered vjs-big-play-button">
+                    <source src="<?php echo $video?>">
                 </video>
-
-                <?php if (isset($_SESSION['message_error'])) {?>
-                    <div class="alert alert-<?= $_SESSION['message_type'];?>" role="alert">
-                    <?= $_SESSION['message_error']?>
-                    </div>
-                <?php session_unset();}?>
+          <br>
+          <span class="info"><b>Materia:</b> <?php echo $title; ?></span><br>
+          <span class="info"><b>Fecha:</b> <?php echo $fecha; ?></span><br>
         </div>
 
+        <div class="video2">
+          <div class="lista_de_reproduccion">
+          <h2 class="titulo_de_lista">Lista de reproducción</h2>
+          <div class="lista_de_reproduccion_videos">
+            <?php
+                $query = " SELECT * FROM asignatura_1";
+
+                $consult = mysqli_query($conn,$query);
+
+                while ($row = mysqli_fetch_array($consult)) { ?>
+                        <h1 class="lista_titulo"><?php echo $titulo; ?></h1>
+                        <a href="list_video.php?id=<?php echo $row['id']?>">
+                          <video
+                            class="miniature_video"
+                            muted width="300"
+                            height="300"
+                            src="<?php echo $row['link_video']?>">
+                          </video>
+                        </a>
+
+            <?php }?>
+          </div>
         </div>
-        
+        </div>
+        </div>
+
+
+<?php if (isset($_SESSION['message_error'])) {?>
+  <div class="alert alert-<?= $_SESSION['message_type'];?>" role="alert">
+  <?= $_SESSION['message_error']?>
+  </div>
+<?php session_unset();}?>
+
             <!-- jQuery and JS bundle w/ Popper.js -->
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
             <script src="https://vjs.zencdn.net/7.8.2/video.min.js"></script>
             <script src="js/reproductor.js"></script>
         </body>
