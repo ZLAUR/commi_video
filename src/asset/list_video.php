@@ -40,6 +40,7 @@ if  (isset($_GET['id'])) {
         <title>
             <?php echo $row['titulo']?>
         </title>
+        <meta name="description" content="<?php echo $row['titulo']?>">
         <link rel="shortcut icon" href="https://i.ibb.co/gPK5xQK/LG1.png" type="image/x-icon">
         <!-- CSS only -->
         <link rel="shortcut icon" href="img/logo_video_h.png" type="image/x-icon">
