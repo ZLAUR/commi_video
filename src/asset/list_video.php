@@ -24,6 +24,10 @@ if  (isset($_GET['id'])) {
     $titulo = $row['titulo'];
     $video = $row['link_video'];
     $fecha = $row['fecha'];
+  }elseif (mysqli_num_rows($result) == 0) {
+    $_SESSION['message_404_error']= 'El video que buscas no existe en nuestra base de datos 404';
+    $_SESSION['error_message_404']='danger';
+    header("location:../home.php");
   }
 }
 ?>

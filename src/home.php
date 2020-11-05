@@ -31,22 +31,15 @@ if ($session == null || $session = '') {
 
 
 
-<?php if (isset($_SESSION['success_message'])) { ?>
-//tipo de mensage video subido
-    <div class="alert alert-<?=  $_SESSION['success_message_type']?> alert-dismissible fade show" role="alert">
-        <?=  $_SESSION['success_message']?>
+<?php if (isset($_SESSION['message_404_error'])) { ?>
+    <div class="alert alert-<?=  $_SESSION['error_message_404']?> alert-dismissible fade show" role="alert">
+        <?=  $_SESSION['message_404_error']?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <?php session_unset(); }?>
 
-<?php if (isset($_SESSION['error_message'])){ ?>
-  // tipo de mensage video no subido
-    <div class="alert alert-<?=  $_SESSION['error_message_type']?> alert-dismissible fade show" role="alert">
-        <?=  $_SESSION['error_message']?>
-</div>
-<?php session_unset(); }?>
 
 
 <!-- menu de la pagina de inicio-->
