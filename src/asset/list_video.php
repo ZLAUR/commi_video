@@ -45,7 +45,7 @@ if  (isset($_GET['id'])) {
             <?php echo $row['titulo']?>
         </title>
         <meta name="description" content="<?php echo $row['titulo']?>">
-        <link rel="shortcut icon" href="https://i.ibb.co/gPK5xQK/LG1.png" type="image/x-icon">
+        <link rel="shortcut icon" href="<?php echo $_SESSION['favicon']?>" type="image/x-icon">
         <!-- CSS only -->
         <link rel="shortcut icon" href="img/logo_video_h.png" type="image/x-icon">
         <link rel="apple-touch-icon" href="img/logo_video_h.png" type="image/x-icon">
@@ -65,7 +65,7 @@ if  (isset($_GET['id'])) {
            <h1 class="titulo"> <a href="../home.php" class="inici_home">Inicio | </a> <?php echo $titulo; ?></h1>
 
                 <video controls id="video-cm" class="videol video-cm video-js vjs-16-9 vjs-big-play-centered vjs-big-play-button">
-                    <source src="<?php echo $video?>">
+                    <source src="<?php echo $row['url']?><?php echo $video?>">
                 </video>
           <br>
           <span class="info"><b>Materia:</b> <?php echo $title; ?></span><br>
@@ -88,7 +88,7 @@ if  (isset($_GET['id'])) {
                             class="miniature_video"
                             muted width="300"
                             height="300"
-                            src="<?php echo $row['link_video']?>">
+                            src="<?php echo $row['url']?><?php echo $row['link_video']?>">
                           </video>
                         </a>
 

@@ -1,4 +1,7 @@
 <?php 
+session_start();
+include 'src/php/conn.php';
+$_SESSION['favicon']='https://i.ibb.co/gPK5xQK/LG1.png';
 $titulo='commi video'  ;
 ?>
 <!DOCTYPE html>
@@ -11,7 +14,7 @@ $titulo='commi video'  ;
     <title>
         <?php echo $titulo?>
     </title>
-    <link rel="shortcut icon" href="https://i.ibb.co/gPK5xQK/LG1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo $_SESSION['favicon']?>" type="image/x-icon">
     <link rel="stylesheet" href="css/index.css">
 </head>
 

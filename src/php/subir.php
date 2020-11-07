@@ -1,26 +1,55 @@
 <?php
 include 'conn.php';
 
-if (isset($_POST['subir_video'])) {
+if (isset($_POST['dubir_video'])) {
     # code...
-    $materia = $_POST['materia'];
-    $titulo = $_POST['titulo'];
-    $link_video = $_POST['link_video'];
-
-    $sql = "INSERT INTO asignatura_1 (materia, titulo, link_video ) VALUES ('$materia', '$titulo', '$link_video')";
-    $consult = mysqli_query($conn, $sql);
-
-    if (!$conn) {
+    $materia=$_POST['materia'];
+    $titulo=$_POST['titulo'];
+    $url='http://192.168.0.8/videos/general/';
+    $video=$_FILES['video_file']['name'];
+    $sql = "INSERT INTO asignatura_1(materia, titulo, url, link_video ) VALUES ('$materia', '$titulo','$url', '$video')";
+    $cosult=mysqli_query($conn,$sql);
+    if (!$cosult) {
         # code...
-        $_SESSION['error_message'] = 'Error al subir a la base de datos';
-        $_SESSION['error_message_type'] = 'danger';
-        header("Location:../home.php");
-        
+        $_SESSION['error_upload_video']='El video no se puso subir a la base de datos';
+        $_SESSION['error_upload_video_type']='danger';
+        header("location:../option/upload_video.php");
     }else{
-        $_SESSION['success_message'] = 'Se ha subido un nuevo video';
-        $_SESSION['success_message_type'] = 'success';
-        header("Location:../home.php");
+        $_SESSION['succes_upload_video']='El video se ha subido a la base de datos';
+        $_SESSION['succes_upload_video_type']='success';
+        header("location:../option/upload_video.php");
+        
+
     }
+
+}
+
+print_r($_FILES);
+//extraer el nombre del video
+$nombre_file=$_FILES['video_file']['name'];
+$guardado=$_FILES['video_file']['tmp_name'];
+if (!file_exists('../../../videos/general')) {
+    # code...
+    mkdir('../../../videos/general/',0777,true);
+    if (file_exists('../../../videos/general')) {
+        # code...
+        if (move_uploaded_file($guardado, '../../../videos/general/'.$nombre_file)) {
+            # code...
+            echo 'save file';
+
+        }else{
+            echo 'error fiel';
+        }
+    }
+}else{
+    if (move_uploaded_file($guardado, '../../../videos/general/'.$nombre_file)) {
+        # code...
+        echo 'save file';
+
+    }else{
+        echo 'error fiel';
+    }
+
 }
 
 ?>
